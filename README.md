@@ -14,4 +14,4 @@ The dataset for this project has been collected from Kaggle. Link - https://www.
 - The program takes data from the train.csv downloaded from the link mentioned above.
 - The program then splits the data into training and testing sets using train_test_split from scikit-learn.
 - An example of this is also visualised by plotting the handwritten number using the value of its pixels by using matlplotlib .
-- An accuracy of 81.20% was achieved by this model
+- An accuracy of 82.38% was achieved by this model
