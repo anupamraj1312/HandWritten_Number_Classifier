@@ -28,3 +28,9 @@ accuracy = count/4200*100
 
 print(accuracy)    
     
+#visualising a number
+temp = X_test[7, :]
+y_temp = y_test[7]
+temp.shape=(28, 28)
+plt.imshow(255-temp, cmap='gray')
+plt.show()
