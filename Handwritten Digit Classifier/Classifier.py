@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('train.csv').as_matrix()
+data = pd.read_csv('train.csv').values
 
 X = data[0:21000, 1:]
 y = data[0:21000, 0]
@@ -11,11 +11,11 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2) 
 
 
-from sklearn.tree import DecisionTreeClassifier
-dtc = DecisionTreeClassifier()
-dtc.fit(X_train, y_train)
+from sklearn.ensemble import RandomForestClassifier
+randomForest = RandomForestClassifier()
+randomForest.fit(X_train, y_train)
 
-y_pred = dtc.predict(X_test)
+y_pred = randomForest.predict(X_test)
 
 count = 0
 
@@ -29,8 +29,8 @@ accuracy = count/4200*100
 print(accuracy)    
     
 #visualising a number
-temp = X_test[7, :]
-y_temp = y_test[7]
+temp = X_test[1, :]
+y_temp = y_test[1]
 temp.shape=(28, 28)
 plt.imshow(255-temp, cmap='gray')
 plt.show()
